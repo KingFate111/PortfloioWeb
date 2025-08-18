@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.J Nandwanshi Foundation - Serving Humanity with Divine Grace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #e8eaed;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #284ef4;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #ffd700;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Premium glassmorphism effect */
+        .glass {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Section with Slider */
+        .hero-slider {
+            margin-top: 80px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #ffd700;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #615ce5, #5764f7);
+            color: #000;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Slider Controls */
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ffd700;
+        }
+
+        /* What We Do Section */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .what-we-do {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .what-we-do img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .what-we-do-content h2 {
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .what-we-do-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Founder Section */
+        .founder-section h2 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .founder-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .founder-card {
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ffed4a, #ffd700);
+        }
+
+        .founder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .founder-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 5px solid #ffd700;
+        }
+
+        .founder-card h3 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .founder-card .title {
+            color: #ffed4a;
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Donations Section */
+        .donations-section h2 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .donations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .donation-card {
+            background: rgba(26, 26, 46, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .donation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ffed4a, #ffd700);
+        }
+
+        .donation-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .donation-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .donation-card-content {
+            padding: 2rem;
+        }
+
+        .donation-card h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #ffd700;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .social-links a:hover {
+            color: #ffed4a;
+            background: rgba(255, 215, 0, 0.2);
+            transform: scale(1.2);
+        }
+
+        .upi-id {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 1rem 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            color: #ffd700;
+            backdrop-filter: blur(5px);
+        }
+
+        .mobile {
+            text-align: center;
+            font-weight: bold;
+            color: #ffed4a;
+            margin: 0.5rem 0;
+        }
+
+        .see-more {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .see-more button {
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .see-more button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Bank Details Section */
+        .bank-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .qr-section {
+            text-align: center;
+        }
+
+        .qr-section h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .qr-placeholder {
+            width: 250px;
+            height: 250px;
+            background: rgba(26, 26, 46, 0.9);
+            border: 3px dashed #ffd700;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            color: #ffd700;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .bank-details {
+            background: rgba(26, 26, 46, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .bank-details h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .bank-info {
+            margin-bottom: 1rem;
+        }
+
+        .bank-info label {
+            font-weight: bold;
+            color: #ffd700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .bank-info span {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            display: block;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #e8eaed;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .contact-form {
+            background: rgba(26, 26, 46, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            color: #e8eaed;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-info {
+            background: rgba(26, 26, 46, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #ffd700, #ffed4a);
+        }
+
+        .footer-section a {
+            color: #e8eaed;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0;
+            border-radius: 5px;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+            padding-left: 0.5rem;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .what-we-do {
+                grid-template-columns: 1fr;
+            }
+            
+            .bank-section,
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+            
+            .donations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Krishna-inspired decorative elements */
+        .section::before {
+            content: '🕉️';
+            font-size: 3rem;
+            display: block;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+        }
+
+        .peacock-feather {
+            background: linear-gradient(90deg, 
+                #ffd700 0%, 
+                #00bcd4 25%, 
+                #4caf50 50%, 
+                #9c27b0 75%, 
+                #ffd700 100%);
+            height: 4px;
+            margin: 3rem 0;
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .peacock-feather::before,
+        .peacock-feather::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            top: -8px;
+        }
+
+        .peacock-feather::before {
+            left: 20%;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
+        .peacock-feather::after {
+            right: 20%;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">🕉️ B.J Nandwanshi Foundation</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#what-we-do">What We Do</a></li>
+                    <li><a href="#founder">Founder</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#donate" class="cta-button">Donate Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section id="home" class="hero-slider">
+        <div class="slide active" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 500%22><rect fill=%22%23ffd700%22 width=%221200%22 height=%22500%22/><circle fill=%22%231a237e%22 cx=%22600%22 cy=%22250%22 r=%22100%22/></svg>')">
+            <div class="slide-content">
+                <h2>Serving Humanity with Divine Grace</h2>
+                <p>Inspired by the teachings of Lord Krishna, we dedicate ourselves to upliftng communities</p>
+                <a href="#donate" class="cta-button">Join Our Mission</a>
+            </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 500%22><rect fill=%22%233949ab%22 width=%221200%22 height=%22500%22/><path fill=%22%23ffd700%22 d=%22M200,250 Q600,100 1000,250 Q600,400 200,250%22/></svg>')">
+            <div class="slide-content">
+                <h2>Education for All</h2>
+                <p>Providing quality education and opportunities to underprivileged children</p>
+                <a href="#what-we-do" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 500%22><rect fill=%22%2300bcd4%22 width=%221200%22 height=%22500%22/><polygon fill=%22%23ffd700%22 points=%22600,100 700,300 500,300%22/></svg>')">
+            <div class="slide-content">
+                <h2>Healthcare Initiatives</h2>
+                <p>Ensuring healthcare access for rural and marginalized communities</p>
+                <a href="#donate" class="cta-button">Support Us</a>
+            </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 500%22><rect fill=%22%234caf50%22 width=%221200%22 height=%22500%22/><circle fill=%22%23ffd700%22 cx=%22300%22 cy=%22150%22 r=%2250%22/><circle fill=%22%23ffd700%22 cx=%22900%22 cy=%22350%22 r=%2250%22/></svg>')">
+            <div class="slide-content">
+                <h2>Environmental Conservation</h2>
+                <p>Protecting nature and promoting sustainable living practices</p>
+                <a href="#contact" class="cta-button">Get Involved</a>
+            </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 500%22><rect fill=%22%23ff6b35%22 width=%221200%22 height=%22500%22/><rect fill=%22%23ffd700%22 x=%22500%22 y=%22200%22 width=%22200%22 height=%22100%22 rx=%2210%22/></svg>')">
+            <div class="slide-content">
+                <h2>Community Development</h2>
+                <p>Building stronger communities through skill development and empowerment</p>
+                <a href="#founder" class="cta-button">Meet Our Team</a>
+            </div>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section id="what-we-do" class="section">
+        <div class="what-we-do">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23f8f9fa' width='400' height='300'/><circle fill='%231a237e' cx='200' cy='100' r='30'/><rect fill='%23ffd700' x='100' y='150' width='200' height='20' rx='10'/><rect fill='%23ff6b35' x='120' y='180' width='160' height='15' rx='8'/><rect fill='%234caf50' x='140' y='205' width='120' height='15' rx='8'/><text x='200' y='250' text-anchor='middle' fill='%231a237e' font-size='16'>Community Service</text></svg>" alt="What We Do">
+            <div class="what-we-do-content">
+                <h2>What We Do</h2>
+                <p>At B.J Nandwanshi Foundation, we are committed to creating positive change in society through various humanitarian initiatives. Our work is inspired by the eternal values of compassion, service, and dharma as taught by Lord Krishna.</p>
+                <p>We focus on education, healthcare, environmental conservation, and community development. Our programs are designed to address the root causes of social issues and provide sustainable solutions that empower individuals and communities.</p>
+                <p>Through the grace of the divine and the dedication of our volunteers, we strive to build a more equitable and compassionate world where everyone has the opportunity to thrive and reach their full potential.</p>
+            </div>
+        </div>
+        <div class="peacock-feather"></div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="section founder-section">
+        <h2>Our Founders & Leaders</h2>
+        <div class="founder-cards">
+            <div class="founder-card">
+                <img src="Photos/bom.jpg" alt="Founder">
+                <h3>B.J Nandwanshi</h3>
+                <p class="title">Founder & Chairman</p>
+                <p>A visionary leader dedicated to serving humanity with the spirit of selfless service. Inspired by spiritual teachings and committed to creating positive social change.</p>
+            </div>
+            <div class="founder-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><circle fill='%23f8f9fa' cx='75' cy='75' r='75'/><circle fill='%23ff6b35' cx='75' cy='60' r='25'/><path fill='%23ffd700' d='M50,100 Q75,80 100,100 L100,130 Q75,120 50,130 Z'/><text x='75' y='145' text-anchor='middle' fill='%231a237e' font-size='8'>Co-Founder</text></svg>" alt="Co-Founder">
+                <h3>Dr. Pranav Nandwanshi</h3>
+                <p class="title">Co-Founder & Director</p>
+                <p>A healthcare professional and social activist, bringing years of experience in community health and education. Passionate about sustainable development.</p>
+            </div>
+            <div class="founder-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'><circle fill='%23f8f9fa' cx='75' cy='75' r='75'/><circle fill='%234caf50' cx='75' cy='60' r='25'/><path fill='%23ffd700' d='M50,100 Q75,80 100,100 L100,130 Q75,120 50,130 Z'/><text x='75' y='145' text-anchor='middle' fill='%231a237e' font-size='8'>Advisor</text></svg>" alt="Advisor">
+                <h3>Fatebahadur Nandwanshi</h3>
+                <p class="title">Spiritual Advisor</p>
+                <p>A learned scholar and spiritual guide who provides wisdom and direction based on ancient Indian values and principles of righteous living.</p>
+            </div>
+        </div>
+        <div class="peacock-feather"></div>
+    </section>
+
+    <!-- Donations Section -->
+    <section id="donate" class="section donations-section">
+        <h2>Support Our Cause</h2>
+        <div class="donations-grid">
+            <div class="donation-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23fff3e0' width='300' height='200'/><rect fill='%23ff9800' x='75' y='75' width='150' height='50' rx='25'/><circle fill='%23ffd700' cx='150' cy='100' r='15'/><text x='150' y='180' text-anchor='middle' fill='%231a237e' font-size='14'>Food & Shelter</text></svg>" alt="Food & Shelter">
+                <div class="donation-card-content">
+                    <h3>Food & Shelter</h3>
+                    <div class="social-links">
+                        <a href="#">🍽️</a>
+                        <a href="#">🏠</a>
+                        <a href="#">🤝</a>
+                    </div>
+                    <div class="upi-id">UPI: food@bjfoundation</div>
+                    <div class="mobile">📱 +91-9876543213</div>
+                    <p>Provide meals and temporary shelter to the homeless and hungry. Every contribution helps feed a family in need.</p>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23fce4ec' width='300' height='200'/><circle fill='%23e91e63' cx='150' cy='100' r='35'/><rect fill='%23ffd700' x='135' y='85' width='30' height='30' rx='5'/><text x='150' y='180' text-anchor='middle' fill='%231a237e' font-size='14'>Women Empowerment</text></svg>" alt="Women Empowerment">
+                <div class="donation-card-content">
+                    <h3>Women Empowerment</h3>
+                    <div class="social-links">
+                        <a href="#">👩</a>
+                        <a href="#">💪</a>
+                        <a href="#">✨</a>
+                    </div>
+                    <div class="upi-id">UPI: women@bjfoundation</div>
+                    <div class="mobile">📱 +91-9876543214</div>
+                    <p>Support skill development and entrepreneurship programs for women. Help create economic independence and dignity.</p>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23f1f8e9' width='300' height='200'/><rect fill='%23689f38' x='100' y='80' width='100' height='40' rx='20'/><circle fill='%23ffd700' cx='150' cy='100' r='12'/><text x='150' y='180' text-anchor='middle' fill='%231a237e' font-size='14'>Emergency Relief</text></svg>" alt="Emergency Relief">
+                <div class="donation-card-content">
+                    <h3>Emergency Relief</h3>
+                    <div class="social-links">
+                        <a href="#">🚨</a>
+                        <a href="#">🆘</a>
+                        <a href="#">🙏</a>
+                    </div>
+                    <div class="upi-id">UPI: emergency@bjfoundation</div>
+                    <div class="mobile">📱 +91-9876543215</div>
+                    <p>Rapid response fund for natural disasters and emergencies. Help us provide immediate relief to affected communities.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="see-more">
+            <button onclick="showMoreDonations()">See More Ways to Help</button>
+        </div>
+
+        <!-- Bank Details Section -->
+        <div class="bank-section">
+            <div class="qr-section">
+                <h3 style="color: #1a237e; margin-bottom: 1rem;">Scan & Donate</h3>
+                <div class="qr-placeholder">
+                    <div style="text-align: center;">
+                        <img src="" alt="">
+                        <div>UPI QR Code</div>
+                        <div style="font-size: 0.9rem; margin-top: 0.5rem;">bjfoundation@upi</div>
+                    </div>
+                </div>
+                <p style="color: #1a237e; margin-top: 1rem;">Scan this QR code with any UPI app to donate instantly</p>
+            </div>
+            
+            <div class="bank-details">
+                <h3>Bank Transfer Details</h3>
+                <div class="bank-info">
+                    <label>Account Name:</label>
+                    <span>B.J Nandwanshi Foundation</span>
+                </div>
+                <div class="bank-info">
+                    <label>Account Number:</label>
+                    <span>1234567890123456</span>
+                </div>
+                <div class="bank-info">
+                    <label>IFSC Code:</label>
+                    <span>SBIN0001234</span>
+                </div>
+                <div class="bank-info">
+                    <label>Bank Name:</label>
+                    <span>State Bank of India</span>
+                </div>
+                <div class="bank-info">
+                    <label>Branch:</label>
+                    <span>Main Branch, Pune</span>
+                </div>
+                <div class="bank-info">
+                    <label>PAN Number:</label>
+                    <span>ABCDE1234F</span>
+                </div>
+                <div class="bank-info">
+                    <label>80G Registration:</label>
+                    <span>Available - Tax Benefits Applicable</span>
+                </div>
+            </div>
+        </div>
+        <div class="peacock-feather"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Send Message 🕊️</button>
+            </form>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Connect With Us</h3>
+            <div style="margin: 2rem 0;">
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 1rem;">📍 Address</h4>
+                    <p>B.J Nandwanshi Foundation<br>
+                    123 Seva Marg, Krishna Nagar<br>
+                    Pune, Maharashtra - 411001</p>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 1rem;">📞 Contact Info</h4>
+                    <p><strong>Phone:</strong> +91-9876543210<br>
+                    <strong>Email:</strong> info@bjfoundation.org<br>
+                    <strong>WhatsApp:</strong> +91-9876543210</p>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #1a237e; margin-bottom: 1rem;">🌐 Follow Us</h4>
+                    <div class="social-links" style="justify-content: flex-start; gap: 1.5rem;">
+                        <a href="#" style="background: #1877f2; color: white; padding: 0.5rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none;">📘</a>
+                        <a href="#" style="background: #1da1f2; color: white; padding: 0.5rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none;">🐦</a>
+                        <a href="#" style="background: #e4405f; color: white; padding: 0.5rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none;">📷</a>
+                        <a href="#" style="background: #0077b5; color: white; padding: 0.5rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none;">💼</a>
+                        <a href="#" style="background: #25d366; color: white; padding: 0.5rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; text-decoration: none;">💬</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🕉️ B.J Nandwanshi Foundation</h3>
+                <p>Serving humanity with divine grace and compassion. Inspired by the eternal teachings of Lord Krishna.</p>
+                <div class="social-links" style="justify-content: flex-start; margin-top: 1rem;">
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📷</a>
+                    <a href="#">💼</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#what-we-do">What We Do</a>
+                <a href="#founder">Our Founders</a>
+                <a href="#donate">Donate Now</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Programs</h3>
+                <a href="#donate">Education Support</a>
+                <a href="#donate">Healthcare Initiative</a>
+                <a href="#donate">Environmental Conservation</a>
+                <a href="#donate">Women Empowerment</a>
+                <a href="#donate">Emergency Relief</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Get Involved</h3>
+                <a href="#donate">Make a Donation</a>
+                <a href="#contact">Volunteer With Us</a>
+                <a href="#contact">Partner Organizations</a>
+                <a href="#contact">Corporate CSR</a>
+                <a href="#contact">Newsletter Signup</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal & Transparency</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Financial Reports</a>
+                <a href="#">Annual Reports</a>
+                <a href="#">Tax Exemption Certificate</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="peacock-feather"></div>
+            <p>&copy; 2025 B.J Nandwanshi Foundation. All rights reserved. | Registered under Section 12A & 80G</p>
+            <p style="margin-top: 0.5rem; color: #ffd700;">🙏 "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः" - May all beings be happy and free from illness</p>
+        </div>
+    </footer>
+
+    <script>
+        // Slider functionality
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(currentSlideIndex);
+        }
+
+        // Auto-advance slides
+        setInterval(nextSlide, 5000);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            alert(`🙏 Thank you ${name}! Your message has been received. We will get back to you soon at ${email}.`);
+            event.target.reset();
+        }
+
+        // Show more donations function
+        function showMoreDonations() {
+            alert('🕉️ More donation options coming soon! For now, you can use any of the above methods or contact us directly for specific donation needs.');
+        }
+
+        // Add some divine blessings animation
+        function createBlessing() {
+            const blessing = document.createElement('div');
+            blessing.innerHTML = '🕉️';
+            blessing.style.position = 'fixed';
+            blessing.style.top = '-50px';
+            blessing.style.left = Math.random() * window.innerWidth + 'px';
+            blessing.style.fontSize = '2rem';
+            blessing.style.color = '#ffd700';
+            blessing.style.pointerEvents = 'none';
+            blessing.style.zIndex = '9999';
+            blessing.style.animation = 'fall 3s linear forwards';
+            document.body.appendChild(blessing);
+            
+            setTimeout(() => {
+                blessing.remove();
+            }, 3000);
+        }
+
+        // Create CSS animation for falling blessings
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(${window.innerHeight + 50}px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add occasional blessings
+        setInterval(createBlessing, 10000);
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for scroll animations
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>23e3f2fd' width='300' height='200'/><rect fill='%231a237e' x='50' y='50' width='200' height='100' rx='10'/><circle fill='%23ffd700' cx='150' cy='100' r='30'/><text x='150' y='180' text-anchor='middle' fill='%231a237e' font-size='14'>Education Support</text></svg>" alt="Education">
+                <div class="donation-card-content">
+                    <h3>Education Fund</h3>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">✏️</a>
+                        <a href="#">🎓</a>
+                    </div>
+                    <div class="upi-id">UPI: education@bjfoundation</div>
+                    <div class="mobile">📱 +91-9876543210</div>
+                    <p>Support quality education for underprivileged children. Your donation helps provide books, uniforms, and school supplies.</p>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23f3e5f5' width='300' height='200'/><rect fill='%23ff6b35' x='100' y='60' width='100' height='80' rx='50'/><circle fill='%23ffd700' cx='150' cy='100' r='20'/><text x='150' y='180' text-anchor='middle' fill='%231a237e' font-size='14'>Healthcare</text></svg>" alt="Healthcare">
+                <div class="donation-card-content">
+                    <h3>Healthcare Initiative</h3>
+                    <div class="social-links">
+                        <a href="#">🏥</a>
+                        <a href="#">💊</a>
+                        <a href="#">❤️</a>
+                    </div>
+                    <div class="upi-id">UPI: health@bjfoundation</div>
+                    <div class="mobile">📱 +91-9876543211</div>
+                    <p>Provide healthcare services to rural communities. Fund medical camps, medicines, and health awareness programs.</p>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23e8f5e8' width='300' height='200'/><circle fill='%234caf50' cx='150' cy='100' r='40'/><rect fill='%23ffd700' x='140' y='90' width='20' height='20'/><text x='150' y='180' text-anchor='middle' fill='%231a237e' font-size='14'>Environment</text></svg>" alt="Environment">
+                <div class="donation-card-content">
+                    <h3>Green Earth Project</h3>
+                    <div class="social-links">
+                        <a href="#">🌱</a>
+                        <a href="#">🌍</a>
+                        <a href="#">🌳</a>
+                    </div>
+                    <div class="upi-id">UPI: green@bjfoundation</div>
+                    <div class="mobile">📱 +91-9876543212</div>
+                    <p>Support environmental conservation efforts. Plant trees, clean rivers, and promote sustainable living practices.</p>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%

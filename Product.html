@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 10px;
+      background-color: #f5f5f5;
+      color: #222;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .dark-mode .product-card {
+      background-color: #1e1e1e;
+      color: #eee;
+    }
+
+    .dark-mode .product-price {
+      color: #fff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 12px;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .product-description {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      margin: 4px 2px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background-color 0.3s;
+    }
+
+    .buy-now {
+      background-color: red;
+      color: white;
+    }
+
+    .add-to-cart {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 8px 12px;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toggle-mode i {
+      font-size: 16px;
+    }
+
+    .dark-mode .toggle-mode {
+      background: #eee;
+      color: #111;
+    }
+
+    @media (max-width: 992px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <button class="toggle-mode" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i> Toggle Dark Mode
+  </button>
+
+  <h1>Products</h1>
+
+  <div class="product-grid">
+    <!-- 12 product cards -->
+    <!-- You can replace the image links and details -->
+    <!-- Begin loop -->
+    <div class="product-card">
+      <div class="product-image"><img src="Products/Bhagvad Geeta.jpg" alt="Product 1"></div>
+      <div class="product-title">Bhagvatgeeta</div>
+      <div class="product-description"> The Bhagavad Gita is a 700-verse spiritual dialogue from the Indian epic Mahabharata, spoken by Lord Krishna to the warrior Arjuna on the battlefield of Kurukshetra. As Arjuna faces a moral and emotional crisis about fighting his own kin, Krishna imparts profound teachings on dharma (duty), karma (action), bhakti (devotion), and jnana (wisdom). <br> Best Text has Ever Writtern</div>
+      <!-- <div class="product-price">₹240</div> -->
+      <a href="https://amzn.to/3HMaZLV" target="_blank"><button class="btn buy-now">Buy Now</button> </a> 
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="Products/blk.png" alt="Product 2"></div>
+      <div class="product-title">Hindi Matrubhasha T-Shirt -Black</div>
+      <div class="product-description">Hindi is not just a language — it's the voice of our soul. This T-shirt is for every proud Indian who sees Hindi as more than a mother tongue — it's identity, emotion, and heritage. Made with 100% premium cotton, unisex fit, perfect for casual wear, college, or cultural events. Wear your pride. Speak your roots.  
+</div>
+      <!-- <div class="product-price">₹499</div> -->
+      <a href="https://bullkraft.blinkstore.in/product/BPD-E7D9-0EB7-4015" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="Products/kafir.png" alt="Product 2"></div>
+      <div class="product-title">Kafir T-shirt Black (Only Front Side Print) </div>
+      <div class="product-description">INFIDEL
+</div>
+      <!-- <div class="product-price">₹499</div> -->
+      <a href="https://bullkraft.blinkstore.in/product/BPD-21F4-163D-4A37" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="Products/phone cover.png" alt="Product 2"></div>
+      <div class="product-title">Hindi Maatrubhasa Phone Cover </div>
+      <div class="product-description">INFIDEL
+</div>
+      <!-- <div class="product-price">₹499</div> -->
+      <a href="https://bullkraft.blinkstore.in/product/BPD-D8B4-FE72-43DC" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="Products/Chankya Niti.jpeg" alt="Product 3"></div>
+      <div class="product-title">Chankya Niti</div>
+      <div class="product-description">A timeless collection of practical life lessons by ancient Indian strategist Chanakya. It covers ethics, politics, relationships, and wealth-building — offering sharp insights into how to live wisely and succeed in a complex world.
+.</div>
+      <!-- <div class="product-price">₹99</div> -->
+      <a href="https://amzn.to/4jAJUbT" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+     <div class="product-card">
+      <div class="product-image"><img src="Products/Handbag.png" alt="Product 9"></div>
+      <div class="product-title">Handbag</div>
+      <div class="product-description">motivational Handbag</div>
+      <!-- <div class="product-price">₹1299</div> -->
+       <a href="https://bullkraft.blinkstore.in/product/BPD-8F41-D8BA-41F9" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+    
+
+    <div class="product-card">
+      <div class="product-image"><img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/814u4vr3tzL._SL1500_.jpg" alt="Product 4"></div>
+      <div class="product-title">Rich Dad Poor Dad</div>
+      <div class="product-description">A personal finance classic comparing two mindsets: the "Poor Dad" who believes in job security and formal education, and the "Rich Dad" who teaches financial independence through investing, entrepreneurship, and money management..</div>
+      <!-- <div class="product-price">₹99</div> -->
+       <a href="https://amzn.to/4n9JUCX" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/71sGiVleerL._SL1500_.jpg" alt="Product 5"></div>
+      <div class="product-title">Psychology Of Money</div>
+      <div class="product-description">A thought-provoking book that explores how people think, feel, and behave around money. It emphasizes that success with money is more about mindset and behavior than intelligence or strategy.</div>
+      <!-- <div class="product-price">₹99</div> -->
+      <a href="https://amzn.to/45MSwca" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81K9sTnHQsL._SL1500_.jpg" alt="Product 6"></div>
+      <div class="product-title">Think and Grow Rich</div>
+      <div class="product-description">A motivational classic based on studying successful individuals. It teaches the power of desire, belief, persistence, and visualization — showing how focused thoughts and definite goals can lead to wealth and achievement.
+</div>
+      <div class="product-price">₹999</div>
+      <a href="https://amzn.to/3HuS748" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="Products/Yes i'm Committed Tshirt at BullKraft.png" alt="Product 7"></div>
+      <div class="product-title">Yes i'm Committed Tshirt </div>
+      <div class="product-description">Yes i'm Committed Tshirt </div>
+      <!-- <div class="product-price">₹1099</div> -->
+       <a href="https://bullkraft.blinkstore.in/product/BPD-232D-55ED-4A86" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="Products/Sweatshirt.png" alt="Product 8"></div>
+      <div class="product-title">Unisex Sweatshirt</div>
+      <div class="product-description">Unisex</div>
+      <!-- <div class="product-price">₹1199</div> -->
+       <a href="https://bullkraft.blinkstore.in/product/BPD-5F7C-A981-4265" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+   
+
+    <div class="product-card">
+      <div class="product-image"><img src="https://via.placeholder.com/200x180?text=Product+10" alt="Product 10"></div>
+      <div class="product-title">Product 10</div>
+      <div class="product-description">Description for product 10.</div>
+      <div class="product-price">₹1399</div>
+       <a href="https://amzn.to/45MSwca" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <!-- <button class="btn add-to-cart">Add to Cart</button> -->
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="https://via.placeholder.com/200x180?text=Product+11" alt="Product 11"></div>
+      <div class="product-title">Product 11</div>
+      <div class="product-description">Description for product 11.</div>
+      <div class="product-price">₹1499</div>
+      <a href="https://amzn.to/45MSwca" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image"><img src="https://via.placeholder.com/200x180?text=Product+12" alt="Product 12"></div>
+      <div class="product-title">Product 12</div>
+      <div class="product-description">Description for product 12.</div>
+      <div class="product-price">₹1599</div>
+       <a href="https://amzn.to/45MSwca" target="_blank"><button class="btn buy-now">Buy Now</button></a>
+      <button class="btn add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>

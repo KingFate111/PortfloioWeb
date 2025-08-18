@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.J. Nandwanshi Foundation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide { display: none; }
+    .active-slide { display: block; }
+    .div img {
+        height: 100%;
+        width: 100%;
+
+    }
+    .support-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .support-section img{
+      width: 100%;
+      max-width: 200px;
+      border-radius: 10px;
+
+    }
+      .bank-info, .upi-info {
+      flex: 1 1 45%;
+    }
+
+    /* .upi-info img {
+      max-width: 100%;
+      border-radius: 12px;
+    } */
+
+    footer {
+      background: #111;
+      text-align: center;
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+      .slider-container {
+      position: relative;
+      max-width: 90%;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .slider-container img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 0 10px;
+      height: 70%;
+    }
+.our-work {
+      background-color: #222;
+      color: white;
+    }
+
+    .our-work h2 {
+      text-align: center;
+      color: var(--accent);
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: var(--accent);
+      background: rgba(0,0,0,0.5);
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+
+    @media(max-width: 768px) {
+      .support-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-yellow-50 to-green-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-10 bg-white shadow">
+    <h1 class="text-4xl font-bold text-green-700">B.J. Nandwanshi Foundation</h1>
+    <p class="text-md mt-2 text-gray-600">Serving cows 🐄, dogs 🐕 & dharma 🙏 — One act of kindness at a time</p>
+  </header>
+
+  <!-- Image Slider -->
+  <section class="max-w-4xl mx-auto my-10">
+    <div class="slider-container">
+      <img class="slide active-slide w-full h-full object-cover" src="Foundation/kali mata nandini.jpg" alt="Cow Image">
+      <img class="slide w-full h-full object-cover" src="Foundation/IMG20221023104835.jpg" alt="Dog Image">
+      <img class="slide w-full h-full object-cover" src="Foundation/IMG20230214112225.jpg" alt="Seva Image">
+    </div>
+  </section>
+
+  <script>
+    let slides = document.querySelectorAll(".slide");
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove("active-slide");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active-slide");
+    }, 3000);
+  </script>
+
+  <!-- Donation Callout -->
+  <section class="text-center py-12 bg-white">
+    <h2 class="text-2xl font-bold text-yellow-700 mb-4">Support the Cause 🧡</h2>
+    <p class="max-w-2xl mx-auto text-gray-700">
+      With limited resources, we care for stray cows, dogs, and abandoned animals.  
+      Help us through donation, volunteering, or just spreading awareness.
+    </p>
+  </section>
+
+  <!-- Organization Cards -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">Our 5 </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-5 rounded shadow-md">
+        <h3 class="text-lg font-bold text-yellow-600">Gaushala No. 1</h3>
+        <p class="text-gray-600">Home to 12 cows including rescued bulls and calves.</p>
+      </div>
+      <div class="bg-white p-5 rounded shadow-md">
+        <h3 class="text-lg font-bold text-yellow-600">Street Dog Care</h3>
+        <p class="text-gray-600">Feeding & first-aid for 50+ dogs in Amravati district.</p>
+      </div>
+      <div class="bg-white p-5 rounded shadow-md">
+        <h3 class="text-lg font-bold text-yellow-600">Volunteer Point</h3>
+        <p class="text-gray-600">Local youths come together to clean and serve weekly.</p>
+      </div>
+      <div class="bg-white p-5 rounded shadow-md">
+        <h3 class="text-lg font-bold text-yellow-600">Adoption Help Desk</h3>
+        <p class="text-gray-600">We guide people to adopt, not shop — especially Indian breeds.</p>
+      </div>
+      <div class="bg-white p-5 rounded shadow-md">
+        <h3 class="text-lg font-bold text-yellow-600">Daily Seva Kitchen</h3>
+        <p class="text-gray-600">Cooked food, roti-dal, and leftovers managed for animal feed.</p>
+      </div>
+    </div>
+    <div>
+
+    
+    <a href="https://www.instagram.com/b_j_nandwanshifoundation/"  target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </section>
+   <!-- OUR WORK SLIDER -->
+  <section class="our-work">
+    <h2>OUR WORK</h2>
+    <div class="slider-container">
+      <span class="arrow left" onclick="prevSlide('slides2')">&#10094;</span>
+      <div class="slides" id="slides2">
+        <img src="Foundation/IMG20221023104835.jpg" alt="Work 1">
+        <img src="Foundation/IMG20230214112225.jpg" alt="Work 2">
+        <img src="Foundation/kali mata nandini.jpg" alt="Work 3">
+      </div>
+      <span class="arrow right" onclick="nextSlide('slides2')">&#10095;</span>
+    </div>
+  </section>
+  <section>
+    <h2>SUPPORT US</h2>
+    <div class="support-section">
+      <div class="bank-info">
+        <h3>Bank Information</h3>
+        <h4>Bank Name: State Bank of India</h4>
+        <p>IFSC Code: SBIN0000123</p>
+        <p>Account No.: 123456789012</p>
+      </div>
+      <div class="upi-info">
+        <img src="image/HINDI.png" alt="UPI QR Code">
+        <p>Holder Name: BJ Nandwanshi</p>
+        <p>UPI ID: bjfoundation@upi</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-green-800 text-white text-sm">
+    © 2025 B.J. Nandwanshi Foundation. All Rights Reserved.
+  </footer>
+  <script>
+    function nextSlide(id) {
+      const slider = document.getElementById(id);
+      slider.appendChild(slider.firstElementChild);
+    }
+
+    function prevSlide(id) {
+      const slider = document.getElementById(id);
+      slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
+    }
+
+    // Optional auto-slide for OUR WORK section
+    setInterval(() => nextSlide('slides2'), 3000);
+  </script>
+
+</body>
+</html>

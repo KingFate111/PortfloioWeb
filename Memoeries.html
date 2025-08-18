@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Memories</title>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin: 30px 10px 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .memory {
+      background-color: rgb(123, 117, 117);
+      border-radius: 5px;
+      padding: 5px;
+      box-shadow: 0 2px 5px rgba(154, 151, 151, 0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      
+    }
+
+    .memory img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 6px;
+      
+
+    }
+
+    .memory p {
+      font-size:18px;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 8px 12px;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    .dark-mode .memory {
+      background-color: #1e1e1e;
+      color: #ddd;
+    }
+
+    .dark-mode .toggle-mode {
+      background: #eee;
+      color: #111;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    .dark-mode footer {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dark mode toggle -->
+  <button class="toggle-mode" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i> Toggle Dark Mode
+  </button>
+
+  <!-- Page Heading -->
+  <h1>Life Time Memories</h1>
+
+  <!-- Section 1: Life Time Memories -->
+  <h2>College Memories</h2>
+  <div class="gallery">
+    <div class="memory"><img src="Photos/IMG-20240212-WA0005.jpg"  alt=""><p>Signature Day</p></div>
+    <div class="memory"><img src="Photos/IMG-20240314-WA0022.jpg" alt=""><p>Last Day</p></div>
+    <div class="memory"><img src="Photos/IMG20230529121144.jpg" alt=""><p>Vikas</p></div>
+    <div class="memory"><img src="Photos/IMG20230911104722.jpg" alt=""><p>Tripli</p></div>
+    <div class="memory"><img src="Photos/IMG20240212135230.jpg" alt=""><p>Sign</p></div>
+    <div class="memory"><img src="Photos/IMG20240215143833.jpg" alt=""><p>Comrades</p></div>
+    <div class="memory"><img src="Photos/IMG_3282.JPG" alt=""><p>King</p></div>
+    <div class="memory"><img src="Photos/IMG_3462.JPG" alt=""  ><p>Brand</p></div>
+  </div>
+
+  <!-- Section 2: More  Memories -->
+  <h2>More Memories</h2>
+  <div class="gallery">
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p>memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p>memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p>memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+  </div>
+  <!-- Section 2: Family Memories -->
+  <h2>Family Memories</h2>
+  <div class="gallery">
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p>memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p>memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+    <div class="memory"><img src="https://via.placeholder.com/200" alt=""><p> memory</p></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; All rights reserved by King Fate
+  </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+</body>
+</html>
