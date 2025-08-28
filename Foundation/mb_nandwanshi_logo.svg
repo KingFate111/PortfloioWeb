@@ -1,0 +1,179 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient definitions -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1E90FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066CC;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.8" />
+      <stop offset="70%" style="stop-color:#FFA500;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with glow -->
+  <circle cx="200" cy="200" r="180" fill="url(#centerGlow)" opacity="0.3"/>
+  
+  <!-- Outer decorative ring -->
+  <circle cx="200" cy="200" r="160" fill="none" stroke="url(#goldGradient)" stroke-width="4" opacity="0.7"/>
+  
+  <!-- Decorative elements around the circle -->
+  <g stroke="url(#goldGradient)" stroke-width="2" fill="url(#goldGradient)" opacity="0.6">
+    <!-- Top -->
+    <circle cx="200" cy="50" r="6"/>
+    <path d="M 200 44 L 194 32 L 206 32 Z"/>
+    
+    <!-- Right -->
+    <circle cx="350" cy="200" r="6"/>
+    <path d="M 356 200 L 368 194 L 368 206 Z"/>
+    
+    <!-- Bottom -->
+    <circle cx="200" cy="350" r="6"/>
+    <path d="M 200 356 L 206 368 L 194 368 Z"/>
+    
+    <!-- Left -->
+    <circle cx="50" cy="200" r="6"/>
+    <path d="M 44 200 L 32 206 L 32 194 Z"/>
+  </g>
+  
+  <!-- Main content area background -->
+  <circle cx="200" cy="200" r="140" fill="url(#blueGradient)" filter="url(#dropshadow)" opacity="0.9"/>
+  <circle cx="200" cy="200" r="135" fill="none" stroke="url(#goldGradient)" stroke-width="3"/>
+  
+  <!-- Krishna's Sacred Footprints -->
+  <g transform="translate(200, 160)" filter="url(#glow)">
+    <!-- Left Footprint -->
+    <g transform="translate(-30, 0)">
+      <!-- Main foot shape -->
+      <ellipse cx="0" cy="0" rx="18" ry="25" fill="url(#goldGradient)"/>
+      <!-- Toes -->
+      <ellipse cx="-8" cy="-20" rx="3" ry="5" fill="url(#goldGradient)"/>
+      <ellipse cx="-3" cy="-22" rx="3" ry="6" fill="url(#goldGradient)"/>
+      <ellipse cx="2" cy="-21" rx="3" ry="5.5" fill="url(#goldGradient)"/>
+      <ellipse cx="7" cy="-19" rx="2.5" ry="4" fill="url(#goldGradient)"/>
+      <ellipse cx="11" cy="-17" rx="2" ry="3" fill="url(#goldGradient)"/>
+      
+      <!-- Sacred symbols on foot -->
+      <circle cx="0" cy="-5" r="3" fill="#FF6B6B"/>
+      <path d="M -2 -8 L 2 -8 L 0 -2 Z" fill="#FF6B6B"/>
+      <circle cx="-5" cy="5" r="2" fill="#FF6B6B"/>
+      <circle cx="5" cy="5" r="2" fill="#FF6B6B"/>
+      <path d="M 0 12 C -3 10, -3 15, 0 13 C 3 15, 3 10, 0 12 Z" fill="#FF6B6B"/>
+    </g>
+    
+    <!-- Right Footprint -->
+    <g transform="translate(30, 0)">
+      <!-- Main foot shape -->
+      <ellipse cx="0" cy="0" rx="18" ry="25" fill="url(#goldGradient)"/>
+      <!-- Toes -->
+      <ellipse cx="8" cy="-20" rx="3" ry="5" fill="url(#goldGradient)"/>
+      <ellipse cx="3" cy="-22" rx="3" ry="6" fill="url(#goldGradient)"/>
+      <ellipse cx="-2" cy="-21" rx="3" ry="5.5" fill="url(#goldGradient)"/>
+      <ellipse cx="-7" cy="-19" rx="2.5" ry="4" fill="url(#goldGradient)"/>
+      <ellipse cx="-11" cy="-17" rx="2" ry="3" fill="url(#goldGradient)"/>
+      
+      <!-- Sacred symbols on foot -->
+      <circle cx="0" cy="-5" r="3" fill="#FF6B6B"/>
+      <path d="M -2 -8 L 2 -8 L 0 -2 Z" fill="#FF6B6B"/>
+      <circle cx="-5" cy="5" r="2" fill="#FF6B6B"/>
+      <circle cx="5" cy="5" r="2" fill="#FF6B6B"/>
+      <path d="M 0 12 C -3 10, -3 15, 0 13 C 3 15, 3 10, 0 12 Z" fill="#FF6B6B"/>
+    </g>
+    
+    <!-- Lotus petals around footprints -->
+    <g fill="url(#goldGradient)" opacity="0.7">
+      <!-- Top petals -->
+      <ellipse cx="0" cy="-45" rx="8" ry="15" transform="rotate(0 0 -45)"/>
+      <ellipse cx="-25" cy="-35" rx="8" ry="15" transform="rotate(-30 -25 -35)"/>
+      <ellipse cx="25" cy="-35" rx="8" ry="15" transform="rotate(30 25 -35)"/>
+      
+      <!-- Bottom petals -->
+      <ellipse cx="0" cy="45" rx="8" ry="15" transform="rotate(180 0 45)"/>
+      <ellipse cx="-25" cy="35" rx="8" ry="15" transform="rotate(150 -25 35)"/>
+      <ellipse cx="25" cy="35" rx="8" ry="15" transform="rotate(-150 25 35)"/>
+      
+      <!-- Side petals -->
+      <ellipse cx="-45" cy="0" rx="8" ry="15" transform="rotate(90 -45 0)"/>
+      <ellipse cx="45" cy="0" rx="8" ry="15" transform="rotate(-90 45 0)"/>
+    </g>
+  </g>
+  
+  <!-- Foundation Name -->
+  <g font-family="serif" font-weight="bold" text-anchor="middle">
+    <!-- Main title -->
+    <text x="200" y="280" font-size="28" fill="url(#textGradient)" filter="url(#dropshadow)">
+      M.B NANDWANSHI
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="200" y="305" font-size="16" fill="white" filter="url(#dropshadow)">
+      FOUNDATION
+    </text>
+    
+    <!-- Sanskrit/Hindi text -->
+    <text x="200" y="325" font-size="12" fill="url(#goldGradient)" font-style="italic" opacity="0.8">
+      सेवा • धर्म • करुणा
+    </text>
+  </g>
+  
+  <!-- Decorative elements around text -->
+  <g stroke="url(#goldGradient)" stroke-width="1.5" fill="none" opacity="0.6">
+    <!-- Decorative lines -->
+    <path d="M 120 270 Q 160 265 200 270 Q 240 265 280 270"/>
+    <path d="M 130 315 Q 165 320 200 315 Q 235 320 270 315"/>
+  </g>
+  
+  <!-- Small decorative dots -->
+  <g fill="url(#goldGradient)" opacity="0.5">
+    <circle cx="110" cy="270" r="2"/>
+    <circle cx="290" cy="270" r="2"/>
+    <circle cx="120" cy="315" r="2"/>
+    <circle cx="280" cy="315" r="2"/>
+  </g>
+  
+  <!-- Om symbol at top -->
+  <g transform="translate(200, 100)" fill="url(#goldGradient)" filter="url(#glow)">
+    <path d="M -10 -15 Q -15 -20, -10 -25 Q -5 -30, 0 -25 Q 5 -20, 10 -25 Q 15 -20, 10 -15 Q 5 -10, 0 -15 Q -5 -10, -10 -15 Z" opacity="0.8"/>
+    <circle cx="0" cy="-20" r="8" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+    <text x="0" y="-15" font-size="16" text-anchor="middle" font-weight="bold">ॐ</text>
+  </g>
+  
+  <!-- Outer border with traditional pattern -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="url(#goldGradient)" stroke-width="2" opacity="0.4" stroke-dasharray="5,5"/>
+  
+  <!-- Corner decorative elements -->
+  <g fill="url(#goldGradient)" opacity="0.3">
+    <circle cx="80" cy="80" r="4"/>
+    <circle cx="320" cy="80" r="4"/>
+    <circle cx="80" cy="320" r="4"/>
+    <circle cx="320" cy="320" r="4"/>
+  </g>
+</svg>

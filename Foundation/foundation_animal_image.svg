@@ -1,0 +1,213 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="heartGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FF1493;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#skyGradient)"/>
+  <rect y="400" width="800" height="200" fill="url(#grassGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="700" cy="100" r="60" fill="#FFD700" opacity="0.9"/>
+  <g stroke="#FFD700" stroke-width="3" opacity="0.7">
+    <line x1="700" y1="20" x2="700" y2="40"/>
+    <line x1="700" y1="160" x2="700" y2="180"/>
+    <line x1="620" y1="100" x2="640" y2="100"/>
+    <line x1="760" y1="100" x2="780" y2="100"/>
+    <line x1="650" y1="50" x2="665" y2="65"/>
+    <line x1="735" y1="135" x2="750" y2="150"/>
+    <line x1="735" y1="65" x2="750" y2="50"/>
+    <line x1="650" y1="150" x2="665" y2="135"/>
+  </g>
+  
+  <!-- Clouds -->
+  <g fill="white" opacity="0.8">
+    <ellipse cx="150" cy="80" rx="40" ry="20"/>
+    <ellipse cx="170" cy="70" rx="30" ry="15"/>
+    <ellipse cx="130" cy="70" rx="25" ry="12"/>
+    
+    <ellipse cx="450" cy="60" rx="35" ry="18"/>
+    <ellipse cx="470" cy="50" rx="25" ry="12"/>
+    <ellipse cx="430" cy="50" rx="20" ry="10"/>
+  </g>
+  
+  <!-- Large Elephant (representing large animals) -->
+  <g transform="translate(50, 250)">
+    <!-- Elephant body -->
+    <ellipse cx="80" cy="60" rx="60" ry="40" fill="#8B8682"/>
+    <!-- Elephant head -->
+    <ellipse cx="25" cy="40" rx="35" ry="30" fill="#8B8682"/>
+    <!-- Elephant trunk -->
+    <path d="M 10 50 Q -10 70 5 85 Q 20 100 10 115" stroke="#8B8682" stroke-width="8" fill="none"/>
+    <!-- Elephant ears -->
+    <ellipse cx="35" cy="25" rx="20" ry="25" fill="#696969"/>
+    <!-- Elephant legs -->
+    <rect x="50" y="90" width="12" height="25" fill="#8B8682"/>
+    <rect x="70" y="90" width="12" height="25" fill="#8B8682"/>
+    <rect x="90" y="90" width="12" height="25" fill="#8B8682"/>
+    <rect x="110" y="90" width="12" height="25" fill="#8B8682"/>
+    <!-- Eye -->
+    <circle cx="35" cy="35" r="3" fill="black"/>
+    <!-- Tusk -->
+    <ellipse cx="15" cy="45" rx="2" ry="8" fill="white"/>
+  </g>
+  
+  <!-- Cow (center, representing farm animals) -->
+  <g transform="translate(280, 270)">
+    <!-- Cow body -->
+    <ellipse cx="40" cy="50" rx="45" ry="25" fill="white"/>
+    <!-- Cow spots -->
+    <ellipse cx="30" cy="40" rx="8" ry="6" fill="black"/>
+    <ellipse cx="55" cy="45" rx="6" ry="8" fill="black"/>
+    <ellipse cx="35" cy="60" rx="5" ry="4" fill="black"/>
+    <!-- Cow head -->
+    <ellipse cx="5" cy="35" rx="15" ry="12" fill="white"/>
+    <!-- Cow ears -->
+    <ellipse cx="-5" cy="25" rx="6" ry="8" fill="pink"/>
+    <ellipse cx="15" cy="25" rx="6" ry="8" fill="pink"/>
+    <!-- Cow horns -->
+    <path d="M -2 20 L -5 10" stroke="black" stroke-width="2"/>
+    <path d="M 12 20 L 15 10" stroke="black" stroke-width="2"/>
+    <!-- Cow legs -->
+    <rect x="15" y="70" width="6" height="15" fill="white"/>
+    <rect x="25" y="70" width="6" height="15" fill="white"/>
+    <rect x="50" y="70" width="6" height="15" fill="white"/>
+    <rect x="60" y="70" width="6" height="15" fill="white"/>
+    <!-- Eyes -->
+    <circle cx="2" cy="32" r="2" fill="black"/>
+    <!-- Nose -->
+    <ellipse cx="5" cy="40" rx="3" ry="2" fill="pink"/>
+    <!-- Tail -->
+    <path d="M 85 55 Q 95 50 90 65" stroke="white" stroke-width="4"/>
+  </g>
+  
+  <!-- Snake (representing dangerous animals) -->
+  <g transform="translate(500, 350)">
+    <path d="M 0 20 Q 20 10 40 20 Q 60 30 80 20 Q 100 10 120 25" 
+          stroke="#228B22" stroke-width="12" fill="none"/>
+    <!-- Snake patterns -->
+    <circle cx="20" cy="15" r="3" fill="#FFD700"/>
+    <circle cx="40" cy="22" r="3" fill="#FFD700"/>
+    <circle cx="60" cy="25" r="3" fill="#FFD700"/>
+    <circle cx="80" cy="18" r="3" fill="#FFD700"/>
+    <!-- Snake head -->
+    <ellipse cx="125" cy="25" rx="8" ry="6" fill="#228B22"/>
+    <!-- Eyes -->
+    <circle cx="128" cy="22" r="1.5" fill="red"/>
+    <circle cx="128" cy="28" r="1.5" fill="red"/>
+    <!-- Tongue -->
+    <path d="M 133 25 L 138 23 M 133 25 L 138 27" stroke="red" stroke-width="1"/>
+  </g>
+  
+  <!-- Small animals -->
+  <!-- Ant (representing small animals) -->
+  <g transform="translate(200, 380)">
+    <!-- Ant body -->
+    <ellipse cx="5" cy="8" rx="3" ry="2" fill="black"/>
+    <ellipse cx="0" cy="6" rx="2" ry="1.5" fill="black"/>
+    <ellipse cx="-3" cy="5" rx="1.5" ry="1" fill="black"/>
+    <!-- Ant legs -->
+    <g stroke="black" stroke-width="0.5">
+      <line x1="0" y1="7" x2="-2" y2="9"/>
+      <line x1="2" y1="8" x2="0" y2="10"/>
+      <line x1="4" y1="8" x2="6" y2="10"/>
+      <line x1="0" y1="5" x2="-2" y2="3"/>
+      <line x1="2" y1="6" x2="0" y2="4"/>
+      <line x1="4" y1="6" x2="6" y2="4"/>
+    </g>
+    <!-- Antennae -->
+    <line x1="-3" y1="4" x2="-5" y2="2" stroke="black" stroke-width="0.5"/>
+    <line x1="-2" y1="4" x2="-4" y2="2" stroke="black" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Bird (representing flying animals) -->
+  <g transform="translate(400, 150)">
+    <!-- Bird body -->
+    <ellipse cx="0" cy="0" rx="8" ry="5" fill="#4169E1"/>
+    <!-- Bird head -->
+    <circle cx="-8" cy="-2" r="4" fill="#4169E1"/>
+    <!-- Bird beak -->
+    <polygon points="-12,-2 -15,-1 -12,0" fill="orange"/>
+    <!-- Bird eye -->
+    <circle cx="-8" cy="-3" r="1" fill="black"/>
+    <!-- Bird wings -->
+    <ellipse cx="2" cy="-2" rx="6" ry="3" fill="#1E90FF"/>
+    <!-- Bird tail -->
+    <polygon points="8,-1 12,-3 12,1" fill="#1E90FF"/>
+  </g>
+  
+  <!-- Tiger (representing wild cats) -->
+  <g transform="translate(600, 320)">
+    <!-- Tiger body -->
+    <ellipse cx="20" cy="25" rx="25" ry="15" fill="#FF8C00"/>
+    <!-- Tiger stripes -->
+    <g stroke="black" stroke-width="2">
+      <line x1="10" y1="20" x2="10" y2="30"/>
+      <line x1="20" y1="18" x2="20" y2="32"/>
+      <line x1="30" y1="20" x2="30" y2="30"/>
+    </g>
+    <!-- Tiger head -->
+    <ellipse cx="0" cy="15" rx="10" ry="8" fill="#FF8C00"/>
+    <!-- Tiger ears -->
+    <polygon points="-8,8 -5,5 -10,5" fill="#FF8C00"/>
+    <polygon points="8,8 5,5 10,5" fill="#FF8C00"/>
+    <!-- Tiger legs -->
+    <rect x="5" y="35" width="5" height="12" fill="#FF8C00"/>
+    <rect x="15" y="35" width="5" height="12" fill="#FF8C00"/>
+    <rect x="25" y="35" width="5" height="12" fill="#FF8C00"/>
+    <rect x="35" y="35" width="5" height="12" fill="#FF8C00"/>
+    <!-- Tiger face stripes -->
+    <g stroke="black" stroke-width="1">
+      <line x1="-5" y1="12" x2="-2" y2="15"/>
+      <line x1="5" y1="12" x2="2" y2="15"/>
+    </g>
+    <!-- Eyes -->
+    <circle cx="-3" cy="12" r="1.5" fill="yellow"/>
+    <circle cx="3" cy="12" r="1.5" fill="yellow"/>
+    <circle cx="-3" cy="12" r="0.8" fill="black"/>
+    <circle cx="3" cy="12" r="0.8" fill="black"/>
+    <!-- Nose -->
+    <polygon points="0,16 -1,18 1,18" fill="black"/>
+    <!-- Tail -->
+    <path d="M 45 30 Q 55 25 50 40" stroke="#FF8C00" stroke-width="4"/>
+  </g>
+  
+  <!-- Hands forming a heart around all animals -->
+  <g transform="translate(400, 300)" opacity="0.7">
+    <!-- Left hand -->
+    <path d="M -150 0 Q -170 -20 -180 0 Q -190 20 -170 40 Q -150 60 -130 40" 
+          fill="url(#heartGradient)" stroke="#FF1493" stroke-width="2"/>
+    <!-- Right hand -->
+    <path d="M 150 0 Q 170 -20 180 0 Q 190 20 170 40 Q 150 60 130 40" 
+          fill="url(#heartGradient)" stroke="#FF1493" stroke-width="2"/>
+    <!-- Heart shape connecting hands -->
+    <path d="M -130 40 Q -100 20 -50 40 Q 0 60 50 40 Q 100 20 130 40" 
+          fill="none" stroke="#FF1493" stroke-width="3" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Floating hearts -->
+  <g fill="#FF69B4" opacity="0.6">
+    <path d="M 100 100 C 100 95, 105 90, 110 95 C 115 90, 120 95, 120 100 C 120 110, 110 120, 110 120 C 110 120, 100 110, 100 100 Z"/>
+    <path d="M 650 200 C 650 197, 653 194, 656 197 C 659 194, 662 197, 662 200 C 662 206, 656 212, 656 212 C 656 212, 650 206, 650 200 Z"/>
+    <path d="M 300 120 C 300 117, 303 114, 306 117 C 309 114, 312 117, 312 120 C 312 126, 306 132, 306 132 C 306 132, 300 126, 300 120 Z"/>
+  </g>
+  
+  <!-- Text at bottom -->
+  <text x="400" y="550" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#2F4F4F">
+    "All Life is Sacred - From Ant to Elephant"
+  </text>
+  <text x="400" y="580" text-anchor="middle" font-family="Arial" font-size="16" fill="#696969">
+    B.J Nandwanshi Foundation - Compassion for Every Creature
+  </text>
+</svg>
