@@ -1,223 +1,1266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>B.J. Nandwanshi Foundation</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .slide { display: none; }
-    .active-slide { display: block; }
-    .div img {
-        height: 100%;
-        width: 100%;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.B Nandwanshi Foundation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    }
-    .support-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-    .support-section img{
-      width: 100%;
-      max-width: 200px;
-      border-radius: 10px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-    }
-      .bank-info, .upi-info {
-      flex: 1 1 45%;
-    }
+        /* Navigation Styles */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
 
-    /* .upi-info img {
-      max-width: 100%;
-      border-radius: 12px;
-    } */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-    footer {
-      background: #111;
-      text-align: center;
-      color: white;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-      .slider-container {
-      position: relative;
-      max-width: 90%;
-      margin: 2rem auto;
-      overflow: hidden;
-      border-radius: 20px;
-    }
-    .slider-container img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
 
-    .slides img {
-      width: 100%;
-      border-radius: 10px;
-      margin: 0 10px;
-      height: 70%;
-    }
-.our-work {
-      background-color: #222;
-      color: white;
-    }
+        .foundation-name {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
 
-    .our-work h2 {
-      text-align: center;
-      color: var(--accent);
-    }
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: var(--accent);
-      background: rgba(0,0,0,0.5);
-      padding: 0.5rem;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .h2 {
-      text-align: center;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+        }
 
-    .arrow.left { left: 10px; }
-    .arrow.right { right: 10px; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0.8rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
 
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
 
-    @media(max-width: 768px) {
-      .support-section {
-        flex-direction: column;
-      }
-    }
-  </style>
+        .donate-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white !important;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(238, 90, 82, 0.3);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(238, 90, 82, 0.4);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section - Image Slider */
+        .hero-section {
+            margin-top: 80px;
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-content {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* What We Do Section */
+        .what-we-do {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .what-we-do-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .what-we-do-image {
+            text-align: center;
+        }
+
+        .what-we-do-image img {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .what-we-do-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .what-we-do-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-list i {
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        /* Who We Are Section */
+        .who-we-are {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .founder-card {
+            text-align: center;
+        }
+
+        .founder-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .founder-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .gallery-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .see-more-btn {
+            display: block;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .see-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Our Donations Section */
+        .our-donations {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .donations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .donation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .donation-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .donation-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .donation-amount {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .donation-amount .amount {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .social-donation-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-donation-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-donation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(238, 90, 82, 0.3);
+        }
+
+        .social-donation-link.youtube {
+            background: linear-gradient(45deg, #ff0000, #cc0000);
+        }
+
+        .social-donation-link.instagram {
+            background: linear-gradient(45deg, #e1306c, #fd1d1d, #ffdc80);
+        }
+        .support-us {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .support-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .qr-section {
+            text-align: center;
+        }
+
+        .qr-code {
+            width: 250px;
+            height: 250px;
+            background: white;
+            border-radius: 15px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .bank-details {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .bank-details h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .bank-info {
+            margin-bottom: 1rem;
+        }
+
+        .bank-info strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tax-benefit {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Social Links */
+        .social-section {
+            padding: 3rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.9rem;
+            }
+            
+            .donate-btn {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem;
+            }
+            
+            .foundation-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .foundation-name {
+                font-size: 1.2rem;
+            }
+
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+
+            .what-we-do-content,
+            .support-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .founders-grid,
+            .gallery-grid,
+            .donations-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .founder-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .foundation-name {
+                font-size: 1rem;
+            }
+
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .slide-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-yellow-50 to-green-100 text-gray-800">
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo">M.B</div>
+                <div class="foundation-name"> Nandwanshi Foundation</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#who-we-are">Who We Are</a></li>
+                <li><a href="#what-we-do">What We Do</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#our-donations">Our Donations</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#donate" class="donate-btn">Donate Now</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Header -->
-  <header class="text-center py-10 bg-white shadow">
-    <h1 class="text-4xl font-bold text-green-700">B.J. Nandwanshi Foundation</h1>
-    <p class="text-md mt-2 text-gray-600">Serving cows 🐄, dogs 🐕 & dharma 🙏 — One act of kindness at a time</p>
-  </header>
+    <!-- Hero Section - Image Slider -->
+    <section class="hero-section" id="home">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="Foundation/IMG20221023104835.jpg" alt="Foundation Image 1" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h2>Making a Difference Together</h2>
+                        <p>Empowering communities through compassion and action</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Foundation/IMG20221023104835.jpg" alt="Foundation Image 2" style="background: linear-gradient(45deg, #764ba2, #667eea); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h2>Building Hope for Tomorrow</h2>
+                        <p>Creating lasting impact in communities worldwide</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="Foundation/IMG20230214112225.jpg" alt="Foundation Image 3" style="background: linear-gradient(45deg, #ff6b6b, #ee5a52); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h2>Together We Can Change Lives</h2>
+                        <p>Join us in our mission to create positive change</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="" alt="Foundation Image 4" style="background: linear-gradient(45deg, #4ecdc4, #44a08d); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h2>Compassion in Action</h2>
+                        <p>Every donation makes a meaningful difference</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="" alt="Foundation Image 5" style="background: linear-gradient(45deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h2>Creating Opportunities</h2>
+                        <p>Transforming lives through education and support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Image Slider -->
-  <section class="max-w-4xl mx-auto my-10">
-    <div class="slider-container">
-      <img class="slide active-slide w-full h-full object-cover" src="Foundation/kali mata nandini.jpg" alt="Cow Image">
-      <img class="slide w-full h-full object-cover" src="Foundation/IMG20221023104835.jpg" alt="Dog Image">
-      <img class="slide w-full h-full object-cover" src="Foundation/IMG20230214112225.jpg" alt="Seva Image">
-    </div>
-  </section>
+    <!-- What We Do Section -->
+    <section class="what-we-do" id="what-we-do">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="what-we-do-content">
+                <div class="what-we-do-image">
+                    <img src="Foundation/foundation_animal_image.svg" alt="What We Do Image" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                </div>
+                <div class="what-we-do-text">
+                    <h3>Our Mission & Impact</h3>
+                    <p>At M.B Nandwanshi Foundation, we are dedicated to creating positive change in communities through various impactful programs and initiatives. Our work focuses on sustainable development and long-term solutions.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education and Skill Development Programs</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <span>Healthcare and Medical Support</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-home"></i>
+                            <span>Community Development Initiatives</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-seedling"></i>
+                            <span>Environmental Conservation Projects</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Emergency Relief and Disaster Support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    let slides = document.querySelectorAll(".slide");
-    let current = 0;
-    setInterval(() => {
-      slides[current].classList.remove("active-slide");
-      current = (current + 1) % slides.length;
-      slides[current].classList.add("active-slide");
-    }, 3000);
-  </script>
+    <!-- Who We Are Section -->
+    <section class="who-we-are" id="who-we-are">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="Foundation/pappaji.jpg" alt="Founder 1" style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem;">
+                    </div>
+                    <h4>Bhagchand</h4>
+                    <p>Chairman & Founder</p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="Foundation/Pranav Bhaiya.jpg" alt="Founder 2" style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(45deg, #764ba2, #667eea); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem;">
+                    </div>
+                    <h4>Pranav Nandwanshi</h4>
+                    <p>Vice Chairman</p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="Foundation/mai khud.jpg" alt="Founder 3" style="width: 100%; height: 100%; object-fit: cover; background: linear-gradient(45deg, #ff6b6b, #ee5a52); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem;">
+                    </div>
+                    <h4>Fatebahadur Nandwanshi</h4>
+                    <p>Secretary</p>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>M.B Nandwanshi Foundation was established with a vision to create meaningful change in society. Our dedicated team of leaders and volunteers work tirelessly to address various social challenges and create sustainable solutions. With years of experience in social work and community development, we have successfully implemented numerous programs that have positively impacted thousands of lives. Our foundation believes in transparency, accountability, and collaborative efforts to achieve our mission of building a better world for everyone.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Donation Callout -->
-  <section class="text-center py-12 bg-white">
-    <h2 class="text-2xl font-bold text-yellow-700 mb-4">Support the Cause 🧡</h2>
-    <p class="max-w-2xl mx-auto text-gray-700">
-      With limited resources, we care for stray cows, dogs, and abandoned animals.  
-      Help us through donation, volunteering, or just spreading awareness.
-    </p>
-  </section>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Foundation/IMG20221023104835.jpg" alt="Gallery Image 1" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Our </h4>
+                            <p>Serving those in need with compassion</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Foundation/IMG20230214112225.jpg" alt="Gallery Image 2" style="background: linear-gradient(45deg, #4ecdc4, #44a08d); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Foundation/kali mata nandini.jpg" alt="Gallery Image 3" style="background: linear-gradient(45deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4></h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="see-more-btn">
+                <i class="fas fa-images"></i> See More
+            </a>
+        </div>
+    </section>
 
-  <!-- Organization Cards -->
-  <section class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">Our 5 </h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white p-5 rounded shadow-md">
-        <h3 class="text-lg font-bold text-yellow-600">Gaushala No. 1</h3>
-        <p class="text-gray-600">Home to 12 cows including rescued bulls and calves.</p>
-      </div>
-      <div class="bg-white p-5 rounded shadow-md">
-        <h3 class="text-lg font-bold text-yellow-600">Street Dog Care</h3>
-        <p class="text-gray-600">Feeding & first-aid for 50+ dogs in Amravati district.</p>
-      </div>
-      <div class="bg-white p-5 rounded shadow-md">
-        <h3 class="text-lg font-bold text-yellow-600">Volunteer Point</h3>
-        <p class="text-gray-600">Local youths come together to clean and serve weekly.</p>
-      </div>
-      <div class="bg-white p-5 rounded shadow-md">
-        <h3 class="text-lg font-bold text-yellow-600">Adoption Help Desk</h3>
-        <p class="text-gray-600">We guide people to adopt, not shop — especially Indian breeds.</p>
-      </div>
-      <div class="bg-white p-5 rounded shadow-md">
-        <h3 class="text-lg font-bold text-yellow-600">Daily Seva Kitchen</h3>
-        <p class="text-gray-600">Cooked food, roti-dal, and leftovers managed for animal feed.</p>
-      </div>
-    </div>
-    <div>
+    <!-- Our Donations Section -->
+    <section class="our-donations" id="our-donations">
+        <div class="container">
+            <h2 class="section-title">Our Donations</h2>
+            <div class="donations-grid">
+                <div class="donation-card">
+                    <h4>Pillu Parmarth sewalaya
+</h4>
+                    <p>Cow Medicare</p>
+                    <div class="donation-amount">
+                        <span>Total Donated:</span>
+                        <span class="amount">₹2500</span>
+                    </div>
+                    <div class="social-donation-links">
+                        <a href="https://www.instagram.com/____travel_and_taste____/" class="social-donation-link instagram">
+                            📱 Instagram
+                        </a>
+                        <a href="https://www.youtube.com/@traveltaste6887" class="social-donation-link youtube">
+                            📺 YouTube
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="donation-card">
+                    <h4>Wagar Bane Vrandavan Go Seva Samiti
+</h4>
+                    <p>Providing essential medical care, medicines, and health checkup camps for rural communities and those who cannot afford basic healthcare services.</p>
+                    <div class="donation-amount">
+                        <span>Total Donated:</span>
+                        <span class="amount">₹1500</span>
+                    </div>
+                    <div class="social-donation-links">
+                        <a href="https://www.instagram.com/wagar_bane_vrandavan_/" class="social-donation-link instagram">
+                            📱 Instagram
+                        </a>
+                        <a href="#" class="social-donation-link youtube">
+                            📺 YouTube
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="donation-card">
+                    <h4>Animal Welfare</h4>
+                    <p>Caring for stray animals, providing food, shelter, and medical treatment. Supporting animal rescue operations and promoting animal rights awareness.</p>
+                    <div class="donation-amount">
+                        <span>Total Donated:</span>
+                        <span class="amount">₹500</span>
+                    </div>
+                    <div class="social-donation-links">
+                        <a href="#" class="social-donation-link instagram">
+                            📱 Instagram
+                        </a>
+                        <a href="#" class="social-donation-link youtube">
+                            📺 YouTube
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- <div class="donation-card">
+                    <h4>Disaster Relief</h4>
+                    <p>Emergency support during natural disasters, providing food, water, shelter, and essential supplies to affected families and communities in crisis.</p>
+                    <div class="donation-amount">
+                        <span>Total Donated:</span>
+                        <span class="amount">₹1,20,000</span>
+                    </div>
+                    <div class="social-donation-links">
+                        <a href="#" class="social-donation-link instagram">
+                            📱 Instagram
+                        </a>
+                        <a href="#" class="social-donation-link youtube">
+                            📺 YouTube
+                        </a>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="donation-card">
+                    <h4>Food Distribution</h4>
+                    <p>Regular food distribution programs for the homeless and hungry, organizing community kitchens and providing nutritious meals to those in need.</p>
+                    <div class="donation-amount">
+                        <span>Total Donated:</span>
+                        <span class="amount">₹85,000</span>
+                    </div>
+                    <div class="social-donation-links">
+                        <a href="#" class="social-donation-link instagram">
+                            📱 Instagram
+                        </a>
+                        <a href="#" class="social-donation-link youtube">
+                            📺 YouTube
+                        </a>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="donation-card">
+                    <h4>Environmental Projects</h4>
+                    <p>Tree plantation drives, clean water initiatives, and environmental awareness campaigns to protect our planet for future generations.</p>
+                    <div class="donation-amount">
+                        <span>Total Donated:</span>
+                        <span class="amount">₹45,000</span>
+                    </div>
+                    <div class="social-donation-links">
+                        <a href="#" class="social-donation-link instagram">
+                            📱 Instagram
+                        </a>
+                        <a href="#" class="social-donation-link youtube">
+                            📺 YouTube
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
 
-    
-    <a href="https://www.instagram.com/b_j_nandwanshifoundation/"  target="_blank"> <i class="fa-brands fa-instagram"></i></a>
-    </div>
-  </section>
-   <!-- OUR WORK SLIDER -->
-  <section class="our-work">
-    <h2>OUR WORK</h2>
-    <div class="slider-container">
-      <span class="arrow left" onclick="prevSlide('slides2')">&#10094;</span>
-      <div class="slides" id="slides2">
-        <img src="Foundation/IMG20221023104835.jpg" alt="Work 1">
-        <img src="Foundation/IMG20230214112225.jpg" alt="Work 2">
-        <img src="Foundation/kali mata nandini.jpg" alt="Work 3">
-      </div>
-      <span class="arrow right" onclick="nextSlide('slides2')">&#10095;</span>
-    </div>
-  </section>
-  <section>
-    <h2>SUPPORT US</h2>
-    <div class="support-section">
-      <div class="bank-info">
-        <h3>Bank Information</h3>
-        <h4>Bank Name: State Bank of India</h4>
-        <p>IFSC Code: SBIN0000123</p>
-        <p>Account No.: 123456789012</p>
-      </div>
-      <div class="upi-info">
-        <img src="image/HINDI.png" alt="UPI QR Code">
-        <p>Holder Name: BJ Nandwanshi</p>
-        <p>UPI ID: bjfoundation@upi</p>
-      </div>
-    </div>
-  </section>
+    <!-- Support Us Section -->
+    <section class="support-us" id="donate">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Support Us</h2>
+            <div class="support-content">
+                <div class="qr-section">
+                    <h3>Scan & Donate</h3>
+                    <div class="qr-code">
+                        <img src="Foundation/My Qr.jpg" alt="QR Code for Donation" style="width: 100%; height: 100%; object-fit: cover; background: white; display: flex; align-items: center; justify-content: center; color: #333; font-size: 1rem;">
+                    </div>
+                    <p>Scan this QR code to donate instantly</p>
+                </div>
+                <div class="bank-details">
+                    <h3>Bank Account Details</h3>
+                    <div class="bank-info">
+                        <strong>Account Name:</strong>
+                        Fatebahadur Nandwanshi
+                    </div>
+                    <div class="bank-info">
+                        <strong>Bank Name:</strong>
+                        State Bank of India
+                    </div>
+                    <div class="bank-info">
+                        <strong>Account Number:</strong>
+                        40143805186
+                    </div>
+                    <div class="bank-info">
+                        <strong>IFSC Code:</strong>
+                       SBIN
+                    </div>
+                    <div class="bank-info">
+                        <strong>Branch:</strong>
+                        ADB
+                    </div>
+                    <div class="tax-benefit">
+                        <i class="fas fa-info-circle"></i>
+                        Tax benefits applicable under Section 80G
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-green-800 text-white text-sm">
-    © 2025 B.J. Nandwanshi Foundation. All Rights Reserved.
-  </footer>
-  <script>
-    function nextSlide(id) {
-      const slider = document.getElementById(id);
-      slider.appendChild(slider.firstElementChild);
-    }
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Send Us a Message</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us how we can help you or how you'd like to get involved..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Message
+                </button>
+            </form>
+        </div>
+    </section>
 
-    function prevSlide(id) {
-      const slider = document.getElementById(id);
-      slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
-    }
+    <!-- Social Links -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/_pradumnya_/" class="social-link">
+                    📱 Instagram
+                </a>
+                <a href="http://youtube.com/@bullkraft" class="social-link">
+                    📺 YouTube
+                </a>
+                <a href="https://kingfate111.github.io/PortfloioWeb/" class="social-link">
+                    🌐 Website
+                </a>
+            </div>
+        </div>
+    </section>
 
-    // Optional auto-slide for OUR WORK section
-    setInterval(() => nextSlide('slides2'), 3000);
-  </script>
-
-</body>
-</html>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#who-we-are">Who We Are</a></li>
+                        <li><a href="#what-we-do">What We Do</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#our-donations">Our Donations</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Community Development</a></li>
+                        <li><a href="#">Environmental Projects</a></li>
+                        <li><a href="#">Emergency Relief</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Corporate Social Responsibility</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 M.B Nandwanshi Foundation. All rights reserved. | Designed with ❤️ for a better tomorrow</p>
+            </div>
+        </div>
