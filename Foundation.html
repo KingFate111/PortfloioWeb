@@ -171,7 +171,7 @@
 
         .slide-content {
             text-align: center;
-            color: white;
+            color: rgb(228, 123, 77);
             padding: 2rem;
         }
 
@@ -231,7 +231,7 @@
         .what-we-do-image img {
             width: 100%;
             max-width: 500px;
-            height: 350px;
+            height: 500px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background: linear-gradient(45deg, #667eea, #764ba2);
@@ -872,8 +872,8 @@
                 <img src="Foundation/IMG20221023104835.jpg" alt="Foundation Image 1" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
                 <div class="slide-overlay">
                     <div class="slide-content">
-                        <h2>Making a Difference Together</h2>
-                        <p>Empowering communities through compassion and action</p>
+                        <h2>Every Animal have Soul</h2>
+                        <!-- <p>Every Animal have souls</p> -->
                     </div>
                 </div>
             </div>
@@ -922,7 +922,7 @@
             <h2 class="section-title">What We Do</h2>
             <div class="what-we-do-content">
                 <div class="what-we-do-image">
-                    <img src="Foundation/foundation_animal_image.svg" alt="What We Do Image" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                    <img src="Foundation/what we  do.png" alt="What We Do Image" style="background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
                 </div>
                 <div class="what-we-do-text">
                     <h3>Our Mission & Impact</h3>
@@ -1185,18 +1185,18 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <h2 class="section-title">Send Us a Message</h2>
-            <form class="contact-form">
+            <form name="submit-to-google-sheet" class="contact-form">
                 <div class="form-group">
                     <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="Name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="Email" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" required placeholder="Tell us how we can help you or how you'd like to get involved..."></textarea>
+                    <textarea id="message" name="Message" required placeholder="Tell us how we can help you or how you'd like to get involved..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">
                     <i class="fas fa-paper-plane"></i> Submit Message
@@ -1264,3 +1264,16 @@
                 <p>&copy; 2025 M.B Nandwanshi Foundation. All rights reserved. | Designed with ❤️ for a better tomorrow</p>
             </div>
         </div>
+   <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzR4Xn8SP4QlPOVQtqvM3qrpeMuoqaHqyCNYb9bO5Gk3gidVvorLnodeyNaqENjL6AA/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+            </body>
+            </html>
