@@ -1,0 +1,62 @@
+,,,Cloud Appication Developer Calendar,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Date,Day,Timing,Module Name,Sub Topic,Practical Activity,Activity,,,,Detail Timing ,,
+2025-09-01,Monday,9.45 AM to 5.15PM,"Module 1: Basics of Cloud Computing and Regulatory Standards","Session 1: Introduction to Cloud Computing",,,,,,,09:45 – 10:30,Theory 1,Practical 1
+2025-09-02,Tuesday,9.45 AM to 5.15PM,"Module 1: Basics of Cloud Computing and Regulatory Standards","Session 2: Cloud Computing Models and Service Types",,,,,,,10:30 – 11:15,Theory 2,Practical 2
+2025-09-03,Wednesday,9.45 AM to 5.15PM,"Module 1: Basics of Cloud Computing and Regulatory Standards","Session 3: Adoption and Applications of Cloud Technologies",,,,,,,11:15 – 11:30,Tea Break,Tea Break
+2025-09-04,Thursday,9.45 AM to 5.15PM,"Module 1: Basics of Cloud Computing and Regulatory Standards","Session 4: Cloud Computing and Data Management",,,,,,,11:30 – 12:15,Practical 1,Theory 1
+2025-09-05,Friday,9.45 AM to 5.15PM,"Module 1: Basics of Cloud Computing and Regulatory Standards","Session 5: Compliance, Security and Legal Considerations in Cloud Computing",,,,,,,12:15 – 13:15,Practical 2,Theory 2
+2025-09-06,Saturday,9.45 AM to 5.15PM,"Module 2: Development Tools and Usage","Session 1: Programming and Development in Cloud Computing",,,,,,,13:15 – 14:00,Lunch Break,Lunch Break
+2025-09-07,Sunday,,,,,,,,,,,14:00 – 14:45,Theory 3,Practical 3
+2025-09-08,Monday,9.45 AM to 5.15PM,"Module 2: Development Tools and Usage","Session 2: Practical Skills and Tools for Cloud Development",,,,,,,,14:45 – 15:30,Theory 4,Practical 4
+2025-09-09,Tuesday,9.45 AM to 5.15PM,"Module 3: Application Requirements","Session 1: Fundamentals of Application Requirements and Scope",,,,,,,15:30 – 15:45,Tea Break,Tea Break
+2025-09-10,Wednesday,9.45 AM to 5.15PM,"Module 3: Application Requirements","Session 2: Documentation and Operating Environment",,,,,,,15:45 – 16:30,Practical 3,Theory 3
+2025-09-11,Thursday,9.45 AM to 5.15PM,"Module 3: Application Requirements","Session 3: Visual Properties and Service Level Agreements (SLA)",,,,,,,16:30 – 17:15,Practical 4,Theory 4
+2025-09-12,Friday,9.45 AM to 5.15PM,"Module 3: Application Requirements","Session 4: Database Systems and Scalability",,,,,,,17:15 – 17:30,,
+2025-09-13,Saturday,9.45 AM to 5.15PM,"Module 3: Application Requirements","Session 5: Application Security and IAM",,,,,,,,,,,
+2025-09-14,Sunday,,,,,,,,,,,,
+2025-09-15,Monday,9.45 AM to 5.15PM,"Module 3: Application Requirements","Session 6: Cloud Integration and Maintenance",,,,,,,,,,
+2025-09-16,Tuesday,9.45 AM to 5.15PM,"Module 4: Application Architecture","Session 1: Impact Analysis and Application Architecture",,,,,,,,,,
+2025-09-17,Wednesday,9.45 AM to 5.15PM,"Module 4: Application Architecture","Session 2: Microservices and Development Approaches",,,,,,,,,,
+2025-09-18,Thursday,9.45 AM to 5.15PM,"Module 4: Application Architecture","Session 3: Cloud Environments and Containerisation",,,,,,,,,,
+2025-09-19,Friday,9.45 AM to 5.15PM,"Module 4: Application Architecture","Session 4: Security in Cloud Applications",,,,,,,,,,
+2025-09-20,Saturday,9.45 AM to 5.15PM,"Module 4: Application Architecture","Session 5: Disaster Recovery and Best Practices",,,,,,,,,,
+2025-09-21,Sunday,,,,,,,,,,,,
+2025-09-22,Monday,9.45 AM to 5.15PM,"Module 5: Application Development","Session 1: Understanding Application Dependencies and Mapping",,,,,,,,,,
+2025-09-23,Tuesday,9.45 AM to 5.15PM,"Module 5: Application Development","Session 2: Database Management and Integration",,,,,,,,,,
+2025-09-24,Wednesday,9.45 AM to 5.15PM,"Module 5: Application Development","Session 3: APIs, Messaging Queues and Scaling Applications",,,,,,,,,,
+2025-09-25,Thursday,9.45 AM to 5.15PM,"Module 5: Application Development","Session 4: Microservices Architecture and Security",,,,,,,,,,
+2025-09-26,Friday,9.45 AM to 5.15PM,"Module 5: Application Development","Session 5: Data Encryption, IAM and Best Practices",,,,,,,,,,
+2025-09-27,Saturday,9.45 AM to 5.15PM,"Module 5: Application Development","Session 6: Practical Implementation of Resilient Cloud Applications",,,,,,,,,,
+2025-09-28,Sunday,,,,,,,,,,,,
+2025-09-29,Monday,9.45 AM to 5.15PM,"Module 6: Application Migration","Session 1: Understanding Cloud Migration and Business Requirements",,,,,,,,,,
+2025-09-30,Tuesday,9.45 AM to 5.15PM,"Module 6: Application Migration","Session 2: Cloud-Native Applications and Frameworks",,,,,,,,,,
+2025-10-01,Wednesday,9.45 AM to 5.15PM,"Module 6: Application Migration","Session 3: Re-Engineering and Refactoring for Cloud Migration",,,,,,,,,,
+2025-10-02,Thursday,9.45 AM to 5.15PM,"Module 6: Application Migration","Session 4: Testing, Integration and Best Practices",,,,,,,,,,
+2025-10-03,Friday,9.45 AM to 5.15PM,"Module 7: Software Packaging and Deployment","Session 1: Packaging and Configuring Applications for Cloud Deployment",,,,,,,,,,
+2025-10-04,Saturday,9.45 AM to 5.15PM,"Module 7: Software Packaging and Deployment","Session 2: Containers and Security Configurations",,,,,,,,,,
+2025-10-05,Sunday,,,,,,,,,,,,
+2025-10-06,Monday,9.45 AM to 5.15PM,"Module 7: Software Packaging and Deployment","Session 3: Deployment Issues and Best Practises",,,,,,,,,,
+2025-10-07,Tuesday,9.45 AM to 5.15PM,"Module 7: Software Packaging and Deployment","Session 4: Practical Implementation of Deployment Strategies",,,,,,,,,,
+2025-10-08,Wednesday,9.45 AM to 5.15PM,"Module 8: Application Performance Monitoring","Session 1: Cloud Deployment Models and Performance Monitoring",,,,,,,,,,
+2025-10-09,Thursday,9.45 AM to 5.15PM,"Module 8: Application Performance Monitoring","Session 2: Application Performance and Business Outcomes",,,,,,,,,,
+2025-10-10,Friday,9.45 AM to 5.15PM,"Module 8: Application Performance Monitoring","Session 3: Automating Performance Monitoring and Optimisation",,,,,,,,,,
+2025-10-11,Saturday,9.45 AM to 5.15PM,"Module 8: Application Performance Monitoring","Session 4: Monitoring, Reviewing, and Optimising Cloud Applications",,,,,,,,,,
+2025-10-12,Sunday,,,,,,,,,,,,
+2025-10-13,Monday,9.45 AM to 5.15PM,"Module 9: Inclusive and Environmentally Sustainable Workplaces","Session 1: Sustainable Practices",,,,,,,,,,
+2025-10-14,Tuesday,9.45 AM to 5.15PM,"Module 9: Inclusive and Environmentally Sustainable Workplaces","Session 2: Respect Diversity and Strengthen Practices to Promote Equity (Equality)/Inclusivity",,,,,,,,,,
+2025-10-15,Wednesday,9.45 AM to 5.15PM,"Module 10: Introduction to Employability Skills","Session 1: Employability Skills for Career Advancement",,,,,,,,,,
+2025-10-16,Thursday,9.45 AM to 5.15PM,"Module 11: Constitutional Values - Citizenship","Session 1: Responsible Citizenship and Sustainable Practices",,,,,,,,,,
+2025-10-17,Friday,9.45 AM to 5.15PM,"Module 12: Becoming a Professional in the 21st Century","Session 1: 21st Century Skills for Personal and Professional Success",,,,,,,,,,
+2025-10-18,Saturday,9.45 AM to 5.15PM,"Module 13: Basic English Skills","Session 1: Communication in Basic English",,,,,,,,,,
+2025-10-19,Sunday,,,,,,,,,,,,
+2025-10-20,Monday,9.45 AM to 5.15PM,"Module 14: Career Development and Goals Setting","Session 1: Career Development and Goal Setting",,,,,,,,,,
+2025-10-21,Tuesday,9.45 AM to 5.15PM,"Module 15: Communication Skills","Session 1: Effective Communication Skills",,,,,,,,,,
+2025-10-22,Wednesday,9.45 AM to 5.15PM,"Module 16: Diversity and Inclusion","Session 1: Gender and Disability in the Workplace",,,,,,,,,,
+2025-10-23,Thursday,9.45 AM to 5.15PM,"Module 17: Financial and Digital Literacy","Session 1: Financial and Digital Literacy",,,,,,,,,,
+2025-10-24,Friday,9.45 AM to 5.15PM,"Module 18: Essential Digital Skills","Session 1: Digital Skills",,,,,,,,,,
+2025-10-25,Saturday,9.45 AM to 5.15PM,"Module 19: Entrepreneurship","Session 1: Entrepreneurship Essentials",,,,,,,,,,
+2025-10-26,Sunday,,,,,,,,,,,,
+2025-10-27,Monday,9.45 AM to 5.15PM,"Module 20: Customer Service","Session 1: Customer-Centric Excellence",,,,,,,,,,
+2025-10-28,Tuesday,9.45 AM to 5.15PM,"Module 21: Getting Ready for Apprenticeship & Jobs","Session 1: Apprenticeships and Interview",,,,,,,,,,
